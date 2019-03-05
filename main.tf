@@ -7,6 +7,7 @@ provider "rancher2" {
 
 resource "rancher2_cluster" "test_cluster" {
   name        = "test-cluster-000"
+  count       = 10
   description = "testing"
   kind        = "rke"
 }
