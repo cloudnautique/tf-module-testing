@@ -1,0 +1,10 @@
+/.dapper
+/.cache
+/.idea
+/.vscode
+/bin
+/dist
+**/.terraform
+*/*.tfstate
+*/*.tfstate.backup
+*swp

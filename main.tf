@@ -5,9 +5,25 @@ provider "rancher2" {
   insecure   = "${var.rancher2_tls_insecure}"
 }
 
+provider "google" {
+  credentials = "${var.gcp_credentials}"
+  project     = "${var.gcp_project_id}"
+  region      = "us-central1"
+}
+
 resource "rancher2_cluster" "test_cluster" {
   name        = "test-cluster-000"
-  count       = 10
   description = "testing"
   kind        = "rke"
+}
+
+module "gcp_instance_cluster" {
+  source = "./modules/gce-custom-cluster"
+
+  cluster_registration_command = "${rancher2_cluster.test_cluster.cluster_registration_token.0.node_command}"
+  cluster_name_prefix          = "wmaxwell-testing-000"
+}
+
+output "registration_tokens" {
+  value = "${rancher2_cluster.test_cluster.cluster_registration_token.0.node_command}"
 }
