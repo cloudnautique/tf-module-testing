@@ -4,6 +4,10 @@ variable "cluster_leader_count" {
   default = 1
 }
 
+variable "cluster_worker_count" {
+  default = 0
+}
+
 variable "gcp_region" {
   default = "us-central1"
 }

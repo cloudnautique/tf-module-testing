@@ -12,7 +12,7 @@ provider "google" {
 }
 
 resource "rancher2_cluster" "test_cluster" {
-  name        = "test-cluster-000"
+  name        = "${var.cluster_name}"
   description = "testing"
   kind        = "rke"
 }
@@ -21,7 +21,7 @@ module "gcp_instance_cluster" {
   source = "./modules/gce-custom-cluster"
 
   cluster_registration_command = "${rancher2_cluster.test_cluster.cluster_registration_token.0.node_command}"
-  cluster_name_prefix          = "wmaxwell-testing-000"
+  cluster_name_prefix          = "${var.cluster_name}"
 }
 
 output "registration_tokens" {

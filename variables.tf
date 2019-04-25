@@ -9,3 +9,5 @@ variable "rancher2_tls_insecure" {}
 variable "gcp_credentials" {}
 
 variable "gcp_project_id" {}
+
+variable "cluster_name" {}
