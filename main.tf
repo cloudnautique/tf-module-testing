@@ -22,6 +22,8 @@ module "gcp_instance_cluster" {
 
   cluster_registration_command = "${rancher2_cluster.test_cluster.cluster_registration_token.0.node_command}"
   cluster_name_prefix          = "${var.cluster_name}"
+  cluster_leader_count         = "${var.cluster_leader_count}"
+  cluster_worker_count         = "${var.cluster_worker_count}"
 }
 
 output "registration_tokens" {

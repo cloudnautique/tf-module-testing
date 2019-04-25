@@ -11,3 +11,7 @@ variable "gcp_credentials" {}
 variable "gcp_project_id" {}
 
 variable "cluster_name" {}
+
+variable "cluster_leader_count" {}
+
+variable "cluster_worker_count" {}
