@@ -15,3 +15,9 @@ variable "cluster_name" {}
 variable "cluster_leader_count" {}
 
 variable "cluster_worker_count" {}
+
+variable "gcp_leader_machine_type" {}
+
+variable "gcp_worker_machine_type" {}
+
+variable "gcp_region" {}

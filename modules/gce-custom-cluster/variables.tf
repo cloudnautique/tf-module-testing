@@ -12,7 +12,11 @@ variable "gcp_region" {
   default = "us-central1"
 }
 
-variable "gcp_machine_type" {
+variable "gcp_worker_machine_type" {
+  default = "n1-standard-2"
+}
+
+variable "gcp_leader_machine_type" {
   default = "n1-standard-2"
 }
 
